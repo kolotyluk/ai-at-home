@@ -1,0 +1,25 @@
+[package]
+name = "node"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "node"
+path = "src/main.rs"
+
+[dependencies]
+common = { path = "../common" }
+axum = { version = "0.7", features = ["macros"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+reqwest = { version = "0.12", features = ["json"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tower-http = { version = "0.5", features = ["trace"] }
+
+[dev-dependencies]
+axum-test = "15"
+tokio = { version = "1", features = ["full"] }
